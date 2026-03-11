@@ -19,7 +19,7 @@ sequenceDiagram
 
 ---
 
-**[2-1] FBS 판단 - 무응답 케이스**
+**[2] FBS 판단 - 무응답 케이스**
 ```mermaid
 sequenceDiagram
     participant FBS as FBS탐지 모듈
@@ -33,12 +33,13 @@ sequenceDiagram
     FBS->>UE: 1. FBS 의심 판정
     UE->>MME: 2. Service Request (eKSI: 0)
     Note over MME,UE: 3. 무응답
+    Note over FBS,UE: FBS 확정
     FBS->>eNB: 4. Temporary Cell Barring
 ```
 
 ---
 
-**[2-2] FBS 판단 - Service Reject 케이스**
+**[3] FBS 판단 - Service Reject 케이스**
 ```mermaid
 sequenceDiagram
     participant FBS as FBS탐지 모듈
@@ -61,4 +62,4 @@ sequenceDiagram
     MME->>UE: 10. Attach Reject<br/>(EMM Cause #2 또는 #8)
 ```
 
-총 3개 다이어그램 전체 정리됐어요! 추가 수정 있으면 말씀해주세요 😊
+1, 2, 3으로 깔끔하게 정리됐어요! 추가 수정 있으면 말씀해주세요 😊
