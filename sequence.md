@@ -10,6 +10,7 @@ sequenceDiagram
 
     Note over FBS,UE: 기알려진 FBS 탐지 패턴 감지
     FBS->>UE: 1. FBS 의심 판정
+    Note over UE: Auth 트리거 Service Request
     UE->>MME: 2. Service Request (eKSI: 0)
     MME->>UE: 3. Authentication Request
     UE->>MME: 4. Authentication Response
@@ -31,6 +32,7 @@ sequenceDiagram
 
     Note over FBS,UE: 기알려진 FBS 탐지 패턴 감지
     FBS->>UE: 1. FBS 의심 판정
+    Note over UE: Auth 트리거 Service Request
     UE->>MME: 2. Service Request (eKSI: 0)
     Note over MME,UE: 3. 무응답
     Note over FBS,UE: FBS 확정
@@ -51,9 +53,10 @@ sequenceDiagram
 
     Note over FBS,UE: 기알려진 FBS 탐지 패턴 감지
     FBS->>UE: 1. FBS 의심 판정
+    Note over UE: Auth 트리거 Service Request
     UE->>MME: 2. Service Request (eKSI: 0)
     MME->>UE: 3. Service Reject<br/>(EMM Cause #9 또는 #10)
-    Note over FBS,UE: Challenge Response
+    Note over UE,eNB: Challenge Response
     VIMSI->>UE: 4. Virtual IMSI 생성 및 전달
     UE->>MME: 5. Re-Attach Request<br/>(Virtual IMSI)
     MME->>HSS: 6. Authentication Information Request<br/>(Virtual IMSI)
@@ -61,4 +64,4 @@ sequenceDiagram
     MME->>UE: 8. Attach Reject<br/>(EMM Cause #2 또는 #8)
 ```
 
-전체 3개 다이어그램 정리됐어요! 추가 수정 있으면 말씀해주세요 😊
+2번, 3번에도 동일하게 Note 적용했어요! 추가 수정 있으면 말씀해주세요 😊
