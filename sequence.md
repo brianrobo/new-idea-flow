@@ -36,7 +36,9 @@ sequenceDiagram
     UE->>MME: 2. Service Request (eKSI: 0)
     Note over MME,UE: 3. 무응답
     Note over FBS,UE: FBS 확정
-    FBS->>eNB: 4. Temporary Cell Barring
+    FBS->>UE: 4. Temporary Cell Barring 지시
+    Note over UE: 해당 셀 Temporary Barring 리스트 등록
+    Note over UE: 정상 기지국 재탐색 시작
 ```
 
 ---
