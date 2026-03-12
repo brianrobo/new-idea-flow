@@ -89,9 +89,11 @@ sequenceDiagram
     UE->>MME: 5. Re-Attach Request<br/>(Virtual IMSI)
     MME->>HSS: 6. Authentication Information Request<br/>(Virtual IMSI)
     HSS->>MME: 7. Authentication Information Answer<br/>(IMSI 미등록 → 인증정보 없음)
-    MME->>UE: 8. Attach Reject<br/>(EMM Cause #2 또는 #8)
+    MME->>UE: 8. Attach Reject<br/>(비정상 EMM Cause)
     Note over FBS,UE: FBS 확정
-    FBS->>eNB: 9. Temporary Cell Barring
+    FBS->>UE: 9. Temporary Cell Barring 지시
+    Note over UE: 해당 셀 Temporary Barring 리스트 등록
+    Note over UE: 정상 기지국 재탐색 시작
 ```
 
 전체 4개 다이어그램 정리됐어요! 추가 수정 있으면 말씀해주세요 😊
